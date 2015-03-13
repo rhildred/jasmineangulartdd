@@ -1,0 +1,62 @@
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script src="hstController.js"></script>
+    <style>
+        td,
+        #tape {
+            text-align: right;
+            padding-right: 2em;
+        }
+
+        #tape,
+        td:first-child {
+            width: 11em;
+        }
+
+        #tape,
+        tdinput[type="text"] {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="hstController">
+    <div id="tape">
+        <p ng-repeat="amount in amounts">{{amount}}</p>
+
+    </div>
+    <form id="addingmachine">
+        <table>
+            <tr>
+                <td>
+                    <input ng-model="amount" type="text" id="current" />
+                </td>
+            </tr>
+            <tr>
+                <td ng-bind="subtotal"></td>
+                <td>subtotal</td>
+            </tr>
+            <tr>
+                <td ng-bind="hst()"></td>
+                <td>hst</td>
+                <td>
+                    <select ng-model="province">
+                        <option value="ON">Ontario
+                        </option>
+                        <option value="AB">Alberta
+                        </option>
+                    </select>
+                </td>
+
+
+
+            </tr>
+            <tr>
+                <td ng-bind="grandtotal"></td>
+                <td>
+                    <input ng-click="addAmount()" type="submit" value="Total" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
