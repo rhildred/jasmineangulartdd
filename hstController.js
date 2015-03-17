@@ -15,6 +15,9 @@ angular.module("myApp", []).controller("hstController", function ($scope) {
             case 'AB':
                 nRc = Number($scope.subtotal) * .05;
                 break;
+            case 'QC':
+                nRc = Number($scope.subtotal) * .14975;
+                break;
             default:
                 nRc = Number($scope.subtotal) * .13;
 

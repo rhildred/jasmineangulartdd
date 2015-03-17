@@ -44,6 +44,12 @@
                     expect($scope.hst()).toEqual(0.5);
                 });
 
+                it('sets the province to qc and calculates hst', function () {
+                    $scope.province = 'QC';
+                    $scope.amount = "10";
+                    $scope.addAmount();
+                    expect($scope.hst()).toEqual(1.4975);
+                });
 
             });
         });
