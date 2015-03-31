@@ -22,7 +22,7 @@
 
 <body ng-app="myApp" ng-controller="hstController">
     <div id="tape">
-        <p ng-repeat="amount in amounts">{{amount}}</p>
+        <p ng-repeat="amount in amounts" ng-bind="amount"></p>
 
     </div>
     <form id="addingmachine">
